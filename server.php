@@ -13,12 +13,12 @@ $errors = array();
 $_SESSION['success'] = '';
 $conn = mysqli_connect("localhost", "root", "306306ay", "website");
 
-if (isset($_GET['reg'])) {
-    $name = mysqli_real_escape_string($conn, $_GET['name']); //escape speial char
-    $username = mysqli_real_escape_string($conn, $_GET['username']);
-    $email = mysqli_real_escape_string($conn, $_GET['email']);
-    $password = mysqli_real_escape_string($conn, $_GET['pass']);
-    $repassword = mysqli_real_escape_string($conn, $_GET['repass']);
+if (isset($_POST['reg'])) {
+    $name = mysqli_real_escape_string($conn, $_POST['name']); //escape speial char
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['pass']);
+    $repassword = mysqli_real_escape_string($conn, $_POST['repass']);
 
     if (empty($name)) {
         array_push($errors, "full name is required");
@@ -56,9 +56,9 @@ if (isset($_GET['reg'])) {
     }
 }
 // ///login
-if (isset($_GET['login'])) {
-    $username = mysqli_real_escape_string($conn, $_GET['username']); //escape speial char
-    $password = mysqli_real_escape_string($conn, $_GET['pass']);
+if (isset($_POST['login'])) {
+    $username = mysqli_real_escape_string($conn, $_POST['username']); //escape speial char
+    $password = mysqli_real_escape_string($conn, $_POST['pass']);
     if (empty($username)) {
         array_push($errors, "user name is required");
     }
@@ -80,14 +80,14 @@ if (isset($_GET['login'])) {
 
 // admin panel
 
-if (isset($_GET['send'])) {
-    $itemname = mysqli_real_escape_string($conn, $_GET['itemname']);
-    $itemprice = mysqli_real_escape_string($conn, $_GET['itemprice']);
-    var_dump($itemprice);
-    $amount = mysqli_real_escape_string($conn, $_GET['amount']);
-    $expdate = mysqli_real_escape_string($conn, $_GET['expdate']);
+if (isset($_POST['send'])) {
+    $itemname = mysqli_real_escape_string($conn, $_POST['itemname']);
+    $itemprice = mysqli_real_escape_string($conn, $_POST['itemprice']);
+    // var_dump($itemprice);
+    $amount = mysqli_real_escape_string($conn, $_POST['amount']);
+    $expdate = mysqli_real_escape_string($conn, $_POST['expdate']);
 
-    $type = mysqli_real_escape_string($conn, $_GET['type']);
+    $type = mysqli_real_escape_string($conn, $_POST['type']);
 
 
     if (empty($itemname)) {
@@ -112,17 +112,3 @@ if (isset($_GET['send'])) {
         array_push($errors, "done");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-// if (!isset($_GET['name'])) {
-//     echo "<p>name is required</p>";
-// }

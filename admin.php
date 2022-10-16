@@ -12,7 +12,7 @@
 
 <body>
     <h2 class="headerhome">Admin panel</h2>
-    <form method="get">
+    <form method="post">
         <?php
         include('errors.php') ?>
         <label for="in">Item Name</label>
@@ -45,6 +45,9 @@
             <option value="vegetables">vegetables</option>
         </select>
         <button type="submit" class="btn" name="send">save</button>
+        <br>
+        <br>
+        <p>Go to home<a href="home.php" class="btn">home</a></p>
     </form>
 </body>
 

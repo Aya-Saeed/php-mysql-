@@ -18,7 +18,7 @@ $conn = mysqli_connect("localhost", "root", "306306ay", "website");
     <table>
 
     </table>
-    <form method="get" class="content">
+    <form method="post" class="content">
         <table dir="ltr" style="font-size: 16px">
             <tr>
                 <th> No.</th>
@@ -87,7 +87,9 @@ $conn = mysqli_connect("localhost", "root", "306306ay", "website");
                     } ?></td>
             </tr>
         </table>
-        <p>Go to admin panel<a href="admin.php">Admin</a></p>
+        <br>
+
+        <p>Go to admin panel<a href="admin.php" class="btn btn-primary">Admin</a></p>
     </form>
 </body>
 

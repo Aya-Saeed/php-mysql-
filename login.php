@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form method="get">
+    <form method="post">
         <?php include('errors.php') ?>
         <h2 class="header">login</h2>
         <label for="un">User_Name</label>

@@ -12,7 +12,7 @@
 
 <body>
     <h2 class="header">Register</h2>
-    <form method="get">
+    <form method="post">
         <?php include('errors.php') ?>
         <label for="fn">Full Name</label>
         <input type="text" name="name" value="<?php echo $name ?>" class="input" id="fn">

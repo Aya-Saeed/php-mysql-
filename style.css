@@ -64,6 +64,7 @@ label {
   background: #5f6ea0;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .error {
